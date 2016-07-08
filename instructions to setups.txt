@@ -1,0 +1,41 @@
+0. download pbpkkb1_windows folder from github, put to C: drive
+
+1. ruby, devkit,jason
+
+go to http://rubyinstaller.org/downloads/, download and install ruby 2.0.0-p648, remember to choose the option "add ruby executables to your path"
+
+download devkit DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe, extract to c:\ruby200\devkit
+
+in CMD, change path to c:\ruby200\devkit and type "ruby dk.rb init" then "ruby dk.rb install"
+in CMD, type "gem install json --platform=ruby"
+
+ 
+2. mysql server
+
+go to https://www.microsoft.com/en-us/download/details.aspx?id=17851, download and install .net framework 4.0
+
+go to http://downloads.mysql.com/archives/installer/, download and install mysql installer 5.6.26,
+install with defalt settings, set root password as password1 
+add "C:\Program Files\MySQL\MySQL Server 5.6\bin\" to system path in enviromental variables
+
+in CMD£¬type "mysql -u root -p", enter password
+in mysql, type "create database pbpkkb1_development; exit;"
+in CMD, type "mysql -u root -p pbpkkb1_development<pbpkkb1_development.sql" (pbpkkb1_development.sql is located in the pbpkkb1_windows folder from github)
+ 
+
+
+
+3. rubymine
+
+go to https://www.jetbrains.com/ruby/download/#section=windows-version and download rubymine (verson 7.1.5 May 11, 2016) for windows and install it
+
+choose 30 day test version of rubymine. 
+open pbpkkb1_windows folder as project
+setup SDK as "c:\ruby200\bin\ruby.exe"
+after index, choose to automatic install all missing gems
+make sure the to change the passoward in \config\database.yml into "password1" (or other password as user defined)
+
+
+
+4. run pbpkkb1
+after all gems installed£¬run pbpkkb in rubymine and visit host page in http://127.0.0.1:3000
